@@ -1,0 +1,6 @@
+{
+  "test_google_search.py::test_google_search": true,
+  "test_google_search.py::test_google_search[Chrome]": true,
+  "test_google_search.py::test_google_search[Firefox]": true,
+  "test_google_search.py::test_google_search[IE]": true
+}
