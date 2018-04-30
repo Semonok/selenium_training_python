@@ -1,8 +1,19 @@
 import pytest
 from selenium import webdriver
 
+fixture = None
+
+@pytest.fixture(scope="session") #["IE", "Chrome", "Firefox"])
+def driver(request):
+    global fixture
+    fixture = choose_browsers(browser="Chrome")
+    login(fixture)
+    fixture.implicitly_wait(2)
+    request.addfinalizer(fixture.quit)
+    return fixture
 
 def choose_browsers(browser):
+    global wd
     if browser == "IE":
         wd = webdriver.Ie()
     elif browser == "Chrome":
@@ -12,10 +23,13 @@ def choose_browsers(browser):
     return wd
 
 
-@pytest.fixture(scope="session") #["IE", "Chrome", "Firefox"])
-def driver(request):
-    fixture = choose_browsers(browser="Chrome")
-    fixture.implicitly_wait(2)
-    request.addfinalizer(fixture.quit)
-    return fixture
+def login(self):
+    self.get("http://localhost/litecart/admin")
+    self.find_element_by_css_selector("input[type='text']").send_keys("admin")
+    self.find_element_by_css_selector("input[type='password']").send_keys("admin")
+    self.find_element_by_css_selector("button.btn.btn-default").click()
+
+
+def logout(self):
+    self.find_element_by_css_selector("i.fa.fa-sign-out.fa-lg").click()
 
