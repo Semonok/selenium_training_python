@@ -1,4 +1,7 @@
 {
+  "test_add_new_product.py::test_add_new_product": true,
+  "test_delete_test_product.py::test_delete_test_product": true,
+  "test_delete_test_products.py::test_delete_test_product": true,
   "test_google_search.py::test_google_search": true,
   "test_google_search.py::test_google_search[Chrome]": true,
   "test_google_search.py::test_google_search[Firefox]": true,
