@@ -1,5 +1,6 @@
 import pytest
 from selenium import webdriver
+from selenium.webdriver.support.wait import WebDriverWait
 
 fixture = None
 
@@ -7,7 +8,8 @@ fixture = None
 def driver(request):
     global fixture
     fixture = choose_browsers(browser="Chrome")
-    login(fixture)
+    fixture.wait = WebDriverWait(fixture, 5)
+    login_admin(fixture)
     fixture.implicitly_wait(2)
     request.addfinalizer(fixture.quit)
     return fixture
@@ -23,7 +25,7 @@ def choose_browsers(browser):
     return wd
 
 
-def login(self):
+def login_admin(self):
     self.get("http://localhost/litecart/admin")
     self.find_element_by_css_selector("input[type='text']").send_keys("admin")
     self.find_element_by_css_selector("input[type='password']").send_keys("admin")
