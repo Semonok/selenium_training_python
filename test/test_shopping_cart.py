@@ -4,21 +4,18 @@ import random
 from selenium.webdriver.common.by import By
 
 def r_d(cash):
-    try:
-        return int(cash[1:])
-    except ValueError:
-        return int(float(cash[1:]))
+    return float(cash[1:])
 
 def test_shopping_cart(driver):
     driver.find_element_by_css_selector("i.fa.fa-chevron-circle-left").click()
     driver.find_element_by_css_selector("ul.nav.nav-stacked.nav-pills a").click()
-    for i in range(3):
+    for i in range(5):
         duck = random.choice(driver.find_elements_by_css_selector("a.link[data-toggle='lightbox']"))
         duck.click()
         driver.find_element_by_css_selector("div#view-full-page a").click()
         duck_size = driver.find_elements_by_css_selector("select.form-control")
         if len(duck_size) > 0:
-            Select(duck_size[0]).select_by_value("Small")
+            Select(duck_size[0]).select_by_value("Medium")
         driver.find_element_by_css_selector("button.btn.btn-success").click()
         driver.wait.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, "span.quantity"), str(i+1)))
     driver.find_element_by_css_selector("div#cart a").click()
@@ -31,5 +28,5 @@ def test_shopping_cart(driver):
         if i == len(items)-1:
             assert driver.find_element_by_css_selector("div.cart.wrapper em").text == "There are no items in your cart."
         else:
-            driver.wait.until(EC.text_to_be_present_in_element(
-            (By.XPATH, subtotal_price_path), "$" + str(r_d(subtotal_price) - r_d(price))))
+            assert driver.wait.until(EC.text_to_be_present_in_element(
+            (By.XPATH, subtotal_price_path),"$" + str(r_d(subtotal_price) - r_d(price)) ))

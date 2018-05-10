@@ -1,3 +1,3 @@
-t = 3
-p = list(3)
+t = '$3.55'
+p = float(t[1:])
 print(p)
