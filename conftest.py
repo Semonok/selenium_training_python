@@ -14,6 +14,7 @@ def driver(request):
     request.addfinalizer(fixture.quit)
     return fixture
 
+
 def choose_browsers(browser):
     global wd
     if browser == "IE":
