@@ -1,6 +1,5 @@
 import random
 
-
 def test_check_links(driver):
     driver.find_element_by_link_text("Countries").click()
     i = random.choice(driver.find_elements_by_xpath("//tbody/tr"))

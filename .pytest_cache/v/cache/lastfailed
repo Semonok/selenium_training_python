@@ -1,0 +1,16 @@
+{
+  "tests/test_customer_registration.py::test_can_register_customer[<model.customer.Customer object at 0x033F25F0>]": true,
+  "tests/test_customer_registration.py::test_can_register_customer[<model.customer.Customer object at 0x03415150>]": true,
+  "tests/test_customer_registration.py::test_can_register_customer[<model.customer.Customer object at 0x03415170>]": true,
+  "tests/test_customer_registration.py::test_can_register_customer[<model.customer.Customer object at 0x034151B0>]": true,
+  "tests/test_customer_registration.py::test_can_register_customer[<model.customer.Customer object at 0x03416130>]": true,
+  "tests/test_customer_registration.py::test_can_register_customer[<model.customer.Customer object at 0x03416250>]": true,
+  "tests/test_customer_registration.py::test_can_register_customer[<model.customer.Customer object at 0x03425170>]": true,
+  "tests/test_customer_registration.py::test_can_register_customer[<model.customer.Customer object at 0x03426110>]": true,
+  "tests/test_customer_registration.py::test_can_register_customer[<model.customer.Customer object at 0x03426270>]": true,
+  "tests/test_customer_registration.py::test_can_register_customer[<model.customer.Customer object at 0x03444110>]": true,
+  "tests/test_customer_registration.py::test_can_register_customer[<model.customer.Customer object at 0x03445170>]": true,
+  "tests/test_customer_registration.py::test_can_register_customer[<model.customer.Customer object at 0x03445190>]": true,
+  "tests/test_customer_registration.py::test_can_register_customer[<model.customer.Customer object at 0x03466110>]": true,
+  "tests/test_customer_registration.py::test_can_register_customer[<model.customer.Customer object at 0x03466270>]": true
+}

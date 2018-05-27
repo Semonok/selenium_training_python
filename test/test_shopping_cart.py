@@ -17,7 +17,7 @@ def test_shopping_cart(driver):
         if len(duck_size) > 0:
             Select(duck_size[0]).select_by_value("Medium")
         driver.find_element_by_css_selector("button.btn.btn-success").click()
-        driver.wait.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, "span.quantity"), str(i+1)))
+        assert driver.wait.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, "span.quantity"), str(i+1)))
     driver.find_element_by_css_selector("div#cart a").click()
     items = driver.find_elements_by_css_selector("button.btn.btn-danger")
     for i in range(len(items)):
